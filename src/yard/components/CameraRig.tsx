@@ -10,7 +10,7 @@ interface Props {
     entities: YardEntity[];
 }
 
-export default function CameraRig({ followEnabled, selectedId, entities }: Props) {
+export default function CameraRig({ followEnabled, selectedId }: Props) {
     const { controls } = useThree();
     const vec = useRef(new Vector3());
 

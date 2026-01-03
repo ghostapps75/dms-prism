@@ -1,11 +1,11 @@
 import { useEffect, useRef } from 'react';
 import { useAnimations } from '@react-three/drei';
 import { AnimationState } from './types';
-import { Group } from 'three';
+import { Group, AnimationClip } from 'three';
 
 export function useSpecimenAnimator(
     group: React.MutableRefObject<Group | null>,
-    animations: THREE.AnimationClip[],
+    animations: AnimationClip[],
     moving: boolean
 ) {
     const { actions, names } = useAnimations(animations, group);
