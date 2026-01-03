@@ -1,0 +1,17 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+# Proxy /api/hf requests to Hugging Face (Simulates Vite proxy in production)
+[[redirects]]
+  from = "/api/hf/*"
+  to = "https://router.huggingface.co/:splat"
+  status = 200
+  force = true
+  headers = {X-From = "Netlify Proxy"}
+
+# Handle React Router (SPA) - Must be last
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
